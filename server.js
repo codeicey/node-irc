@@ -35,7 +35,7 @@ class Server extends net.Server {
     this.middleware = [];
     this.created = new Date();
     this.channels = new Map();
-    this.hostname = options.hostname || 'localhost';
+    this.hostname = options.hostname || '0.0.0.0';
     this.on('connection', sock => {
       const user = new User(sock);
       this.users.push(user);
